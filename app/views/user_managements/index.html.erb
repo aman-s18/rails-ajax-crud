@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>User Managements</h1>
+
+<table class="table" id="entries">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Mobile</th>
+      <th scope="col">Image</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr <%= dom_id user %>>
+      <td><%=user.name%></td>
+      <td><%=user.email%></td>
+      <td><%=user.mobile%></td>
+      <td><%=user.image%></td>
+        <td><%= link_to 'Show |', user_management_path(user) %>
+        <%= link_to 'Edit |', edit_user_management_path(user),:remote => true %>
+        <%= link_to 'Destroy', user_management_path(user), method: :delete, data: { confirm: 'Are you sure?' },:remote => true %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'New User Management', new_user_management_path, :remote => true %>

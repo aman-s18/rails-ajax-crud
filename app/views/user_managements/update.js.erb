@@ -1,0 +1,4 @@
+$("#<%= dom_id(@user_management) %>").replaceWith("<%= escape_javascript(render(:partial => @user_management)) %>");
+<% @user_management = User.new # reset for new form %>
+$(".edit_entry").replaceWith("<%= escape_javascript(render(:partial => "form"))%>")
+$(".new_entry")[0].reset();

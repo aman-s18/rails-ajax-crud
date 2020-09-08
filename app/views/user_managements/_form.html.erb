@@ -1,0 +1,51 @@
+<%= form_with(model: @user_management, url: user_managements_path, :remote => true) do |f| %>
+
+  <% if @user_management.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user_management.errors.count, "error") %> prohibited this user_management from being saved:</h2>
+
+      <ul>
+      <% @user_management.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :Name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %> 
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mobile %><br />
+    <%= f.text_field :mobile, autofocus: true%>
+  </div>
+
+  <div class="field">
+    <%= f.label "Profile Pic" %><br />
+    <%= f.file_field :image, autofocus: true%>
+  </div>
+  <br/>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

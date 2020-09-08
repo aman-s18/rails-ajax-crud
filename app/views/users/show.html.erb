@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="card">
+    <div class="row">
+      <div class="col-md-8">
+        <h2 class="mt-2" style="text-align: center;"><%= @user.name %>'s Profile</h2>
+      <div class="row">
+        <div class="col-md-2 ml-4 mt-4"></div>
+        <div class="col-md-2 ml-4 mt-4">
+          <h4>Name:</h4>
+          <h4>Email:</h4>
+          <h4>Mobile:</h4>
+        </div>
+        <div class="col-md-4 mt-4 mt-4">
+          <h4><%= @user.name%></h4>
+          <h4><%= @user.email%></h4>
+          <h4><%= @user.mobile%></h4>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-4">
+        <center>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/User_font_awesome.svg/1200px-User_font_awesome.svg.png" width="150px" height="150px">
+        <br/>
+          <%#= link_to 'Edit', edit_user_path(@user) %>
+        </center>
+      </div>
+    </div>
+  </div>
+</div>
